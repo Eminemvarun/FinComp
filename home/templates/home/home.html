@@ -1,0 +1,39 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+Fincomp - Your Financial Companion
+{% endblock %}
+
+{% block content %}
+<section id="welcome">
+    <h2>Welcome to Fin Consult</h2>
+    <p>FinConsult is your trusted financial companion, providing expert guidance and personalized solutions to help you
+        achieve your financial goals.</p>
+</section>
+<!--
+
+{% for post in posts %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ post.author }}</a>
+            <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+        </div>
+        <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+        <p class="article-content">{{ post.content }}</p>
+    </div>
+</article>
+{% endfor %}
+-->
+
+<section id="features">
+    <h2>Our Features</h2>
+    <ul>
+        <li>Comprehensive Financial Planning</li>
+        <li>Investment Management</li>
+        <li>Tax Consultation</li>
+        <li>Retirement Planning</li>
+        <!-- Add more features as necessary -->
+    </ul>
+</section>
+{% endblock %}
