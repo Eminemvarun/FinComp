@@ -18,15 +18,14 @@ from django.contrib import admin
 from django.urls import path,include
 from loginapp import views as login_views
 from django.contrib.auth import views as auth_views
+from vendor import views as vendor_views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("register/", login_views.register,name="register"),
-    
     path("login/", auth_views.LoginView.as_view(template_name="loginapp/login.html"),name="login"),
     path("logout/",auth_views.LogoutView.as_view(template_name="loginapp/logout.html"),name="logout"),
-
+    path('vendors/', vendor_views.vendors, name='vendors'),
     path("", include("home.urls")),
-
 ]

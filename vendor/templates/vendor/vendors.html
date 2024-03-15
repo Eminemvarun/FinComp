@@ -1,0 +1,26 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    Financial Consultancy Software Vendors
+{% endblock %}
+
+{% block content %}
+    <h1>Financial Consultancy Software Vendors</h1>
+    <div class="vendor-list">
+        <!-- Loop through vendors data provided by Django -->
+        {% for vendor in vendors %}
+            <div class="vendor">
+                <h2>{{ vendor.company_name }}</h2>
+                <p><strong>Software Name:</strong> {{ vendor.software_name }}</p>
+                <p><strong>Description:</strong> {{ vendor.description }}</p>
+                <p><strong>Company Website:</strong> <a href="{{ vendor.company_website }}" target="_blank">{{ vendor.company_website }}</a></p>
+                <p><strong>Contact Number:</strong> {{ vendor.contact_no }}</p>
+                <p><strong>Address:</strong> {{ vendor.address }}</p>
+                <p><strong>Number of Employees:</strong> {{ vendor.employees }}</p>
+                <p><strong>Last Demo Date:</strong> {{ vendor.last_demo_date }}</p>
+                <p><strong>Last Reviewed Date:</strong> {{ vendor.last_reviewed_date }}</p>
+                <hr>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

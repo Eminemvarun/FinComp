@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'loginapp.apps.LoginappConfig',
     'crispy_forms',
     'crispy_bootstrap4',
+    'vendor.apps.VendorConfig',
 
 ]
 
@@ -128,3 +129,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = "fincomp-home"
+LOGIN_URL = "login"
