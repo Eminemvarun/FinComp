@@ -19,6 +19,7 @@ from django.urls import path,include
 from loginapp import views as login_views
 from django.contrib.auth import views as auth_views
 from vendor import views as vendor_views
+from addvendor import views as addvendor_views
 
 
 urlpatterns = [
@@ -28,4 +29,5 @@ urlpatterns = [
     path("logout/",auth_views.LogoutView.as_view(template_name="loginapp/logout.html"),name="logout"),
     path('vendors/', vendor_views.vendors, name='vendors'),
     path("", include("home.urls")),
+    path('add-vendor/', addvendor_views.AddVendor, name="addvendor")
 ]
