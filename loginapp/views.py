@@ -22,3 +22,6 @@ def register(request):
 def user_logout(request):
     logout(request)
     return render(request,"loginapp/logout.html", {})
+
+def profile(request):
+    return render(request,"loginapp/profile.html", {})

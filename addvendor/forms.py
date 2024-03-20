@@ -22,4 +22,5 @@ class VendorRegistrationForm(ModelForm):
         'professional_services',
         'last_demo_date',
         'last_reviewed_date',
+        'image',
         ]     

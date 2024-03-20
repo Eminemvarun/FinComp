@@ -18,6 +18,7 @@ class Vendor(models.Model):
   professional_services = models.CharField(max_length=255)
   last_demo_date = models.DateField()
   last_reviewed_date = models.DateField()
+  image = models.ImageField(default="vendor/default.jpg",upload_to="profile_pics")
   
   def __str__(self):
       return self.company_name

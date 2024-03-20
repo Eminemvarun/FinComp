@@ -29,5 +29,6 @@ urlpatterns = [
     path("logout/",auth_views.LogoutView.as_view(template_name="loginapp/logout.html"),name="logout"),
     path('vendors/', vendor_views.vendors, name='vendors'),
     path("", include("home.urls")),
-    path('add-vendor/', addvendor_views.AddVendor, name="addvendor")
+    path('add-vendor/', addvendor_views.AddVendor, name="addvendor"),
+    path("profile/", login_views.profile, name ="profile")
 ]
