@@ -1,35 +1,127 @@
 {% extends 'home/base.html' %}
+{% load static %}
 
 {% block content %}
-    <section id="mission">
-        <h2>Our Mission</h2>
-        <p>At FinConsult, our mission is to provide comprehensive financial solutions tailored to the needs of our clients. We strive to empower individuals and businesses to achieve their financial goals through expert guidance and personalized strategies.</p>
+    <style>
+        .container1 {
+  border: 2px solid #f3eaea;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* Clear floats after containers */
+.container1::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Float images inside the container to the left. Add a right margin, and style the image as a circle */
+.container1 img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* Increase the font-size of a span element */
+.container1 span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+/* Add media queries for responsiveness. This will center both the text and the image inside the container */
+@media (max-width: 500px) {
+  .container {
+    text-align: center;
+  }
+
+  .container1 img {
+    margin: auto;
+    float: none;
+    display: block;
+  }
+}
+    </style>
+<div style="max-width: 100%; margin: 0 auto; padding: 20px; text-align: left;margin-left: 150px;" class="container pt-6">
+    <header style="background-color: #007bff; color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h1>Welcome to FinComp</h1>
+    </header>
+
+    <section class="vision" style="margin-bottom: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px;">
+        <h2 style="color: #007bff;">Our Vision</h2>
+        <p>Our vision at FinComp is to empower individuals and businesses alike to take control of their financial futures. We strive to be the leading provider of comprehensive financial services, leveraging innovation and expertise to drive positive outcomes for our clients.</p>
     </section>
-    
-    <section id="team">
-        <h2>Our Team</h2>
-        <div class="team-member">
-            <h3>John Doe</h3>
-            <p>Financial Advisor</p>
-        </div>
-        <div class="team-member">
-            <h3>Jane Smith</h3>
-            <p>Investment Analyst</p>
-        </div>
-        <div class="team-member">
-            <h3>Lucy Walker</h3>
-            <p>Stock Market Expert</p>
-        </div>
-        <!-- Add more team members as necessary -->
-    </section>
-    
-    <section id="values">
-        <h2>Our Values</h2>
-        <ul>
-            <li>Integrity</li>
-            <li>Excellence</li>
-            <li>Client-Centricity</li>
-            <li>Innovation</li>
+
+    <section class="services" style="margin-bottom: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px;">
+        <h2 style="color: #007bff;">Our Services</h2>
+        <ul style="list-style-type: none; padding: 0;">
+            <li>Comprehensive Financial Planning</li>
+            <li>Investment Management</li>
+            <li>Tax Consultation</li>
+            <li>Retirement Planning</li>
         </ul>
     </section>
+
+    <section class="why-choose" style="margin-bottom: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px;">
+        <h2 style="color: #007bff;">Why Choose FinComp?</h2>
+        <ul style="list-style-type: none; padding: 0;">
+            <li>Expertise</li>
+            <li>Personalized Approach</li>
+            <li>Commitment to Excellence</li>
+        </ul>
+    </section>
+    <header style="background-color: #f2f4f6; color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h1>Our Team</h1>
+    </header>
+    
+<div class="card-group" style="gap: 10px">
+
+<div class="card" style="background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 400px; text-align: left;">
+    <img src="{% static 'home/download1.jpg' %}" alt="John Doe" style="width: 100%; border-radius: 8px;">
+    <h2 style="margin-top: 10px; margin-bottom: 5px;">John Doe</h2>
+    <h3 style="margin-top: 5px; margin-bottom: 5px;">Financial Advisor</h3>
+    <p style="margin-top: 5px; margin-bottom: 10px;">15+ years experience. Master's in Finance. Specializes in retirement planning and investment management.</p>
+</div>
+
+<div class="card" style="background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 400px; text-align: left;">
+    <img src="{% static 'home/download4.jpg' %}" alt="Jane Smith" style="width: 100%; border-radius: 8px;">
+    <h2 style="margin-top: 10px; margin-bottom: 5px;">Jane Smith</h2>
+    <h3 style="margin-top: 5px; margin-bottom: 5px;">Investment Analyst</h3>
+    <p style="margin-top: 5px; margin-bottom: 10px;">Economics background. Excels in research and analysis. Expertise in optimizing investment portfolios.</p>
+</div>
+
+<div  class="card" style="background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 400px; text-align: left;">
+    <img src="{% static 'home/download2.jpg' %}" alt="Lucy Walker" style="width: 100%; border-radius: 8px;">
+    <h2 style="margin-top: 10px; margin-bottom: 5px;">Lucy Walker</h2>
+    <h3 style="margin-top: 5px; margin-bottom: 5px;">Stock Market Expert</h3>
+    <p style="margin-top: 5px; margin-bottom: 10px;">Wall Street experience. Analyzes trends and executes strategic trades. A valuable asset in stock market navigation.</p>
+</div>
+<div class="card" style="background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 400px; text-align: left;">
+    <img src="{% static 'home/download3.jpg' %}" alt="Lucy Walker" style="width: 100%; border-radius: 8px;">
+    <h2>David Lee</h2>
+    <h3>Tax Consultant</h3>
+    <p>Accounting background. Proactive tax planning and compliance. Personalized solutions for clients' needs.</p>
+</div>
+</div>
+</div>
+<header style="background-color: #ecf0f3; color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <h1>Testinomials</h1>
+</header>
+
+<div class="container1">
+
+    <img src="{% static 'home/download5.jpg' %}" alt="Avatar" style="width:90px">
+    <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
+    <p>"Working with FinConsult has been a game-changer for me and my family. Their team of financial experts took the time to truly understand our unique goals and concerns, and they crafted a comprehensive financial plan that exceeded our expectations. Thanks to their guidance, we now feel more confident and in control of our financial future. I highly recommend FinConsult to anyone seeking personalized and reliable financial advice."</p>
+    
+  </div>
+  
+  <div class="container1">
+    <img src="{% static 'home/download6.jpg' %}" alt="Avatar" style="width:90px">
+    <p><span >John Flex.</span> CEO at Company.</p>
+    <p>"I cannot thank FinConsult enough for their exceptional service and support. As someone who was completely new to investing, I was overwhelmed by the complexities of the market. However, the team at FinConsult patiently walked me through the process, explaining everything in simple terms and helping me build a diversified investment portfolio. Thanks to their expertise, I've seen impressive returns on my investments and feel optimistic about my financial prospects. FinConsult truly cares about their clients' success, and I'm grateful to have them as my financial partner."</p>
+
+  </div>
 {% endblock %}
