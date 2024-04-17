@@ -82,3 +82,36 @@ body {
   .account-heading {
     font-size: 2.5rem;
   }
+
+  /* Vendor Display CSS */
+  .vendor-display-widget {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .vendor-list {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .vendor-card {
+    flex: 0 0 auto;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .vendor-card a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .vendor-card a:hover {
+    text-decoration: underline;
+  }

@@ -7,9 +7,13 @@
 
 {% block content %}
     <h1>Financial Consultancy Software Vendors</h1>
+    <p>Total Vendors: {{page_obj.paginator.count}}</p>
+
     <div class="content-section">
-        <!-- Loop through vendors data provided by Django -->
-        {% for vendor in vendors %}
+    
+        <!-- Loop through vendors data -->
+        {% for vendor in page_obj %}
+
             <div class="vendor">
                 <a>
                 <img class="rounded-circle account-img" src="{% static 'vendor/default.png' %}" alt = "vendor-logo">
@@ -23,7 +27,17 @@
                 <p><strong>Number of Employees:</strong> {{ vendor.employees }}</p>
                 <p><strong>Last Demo Date:</strong> {{ vendor.last_demo_date }}</p>
                 <p><strong>Last Reviewed Date:</strong> {{ vendor.last_reviewed_date }}</p>
-                <hr>
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}"><button class="btn btn-outline">Next Page</button></a>
+                {% endif %}
+
+                <!--
+                {% if page_obj.has_next%}
+                <div hx-get="{% url 'vendors' %}?page={{ page_obj.next_page_number }}"
+                      hx-swap="outerHtml"                      hx-trigger="revealed">
+                </div>
+                {% endif %}
+                -->
             </div>
         {% endfor %}
     </div>

@@ -1,11 +1,10 @@
 from django.shortcuts import render
-from .models import Posts
+from vendor.models import Vendor
 
 def home(request):
-    context ={
-        'posts' : Posts.objects.all()
-    }
-    return render(request,'home/home.html',context)
+    vendors = Vendor.objects.all().filter()[:5]
+    return render(request,'home/home.html',{'vendors': vendors})
+
 # Create your views here.
 
 def about(request):

@@ -4,9 +4,9 @@
 <h2>You have been logged Out</h2>
 <div class="border-top pt-3">
     <small class="text-muted">
-        <a href="{% url 'login' %}">Login In Again </a>
-        <a href="{% url 'fincomp-home' %}">Back to Home </a>
-
+    
+    <button class="btn btn-outline-info" type ="submit"><a href="{% url 'fincomp-home' %}">Back to Home </a></button>
+    <button class="btn btn-outline-info" type ="submit"><a href="{% url 'login' %}">Login again</a> </button>
     </small>
 </div>
 {% endblock content %}

@@ -1,4 +1,5 @@
 from django.db import models
+from PIL import Image
 
 # Create your models here.
 
@@ -18,8 +19,16 @@ class Vendor(models.Model):
   professional_services = models.CharField(max_length=255)
   last_demo_date = models.DateField()
   last_reviewed_date = models.DateField()
-  image = models.ImageField(default="vendor/default.jpg",upload_to="profile_pics")
+  image = models.ImageField(default="vendor/static/vendor/default.jpg",upload_to="profile_pics")
+  
   
   def __str__(self):
       return self.company_name
-    
+  
+  def save(self):
+     super().save()
+     img = Image.open(self.image.path)
+     if(img.height>500 or img.width>500):
+        output_size = (500,500)
+        img.thumbnail(output_size)
+        img.save(self.image.path) 
